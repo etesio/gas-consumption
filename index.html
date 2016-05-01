@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <meta name="description" content="Gas-consumption : Data Incubator project - natural gas consumption risk in the U.S.">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Gas-consumption by enrico86</title>
+    <title>Gas-consumption</title>
   </head>
 
   <body>
-    <header>
-      <div class="inner">
-        <h1>Gas-consumption</h1>
-        <h2>Data Incubator project - natural gas consumption risk in the U.S.</h2>
-        <a href="https://github.com/enrico86/gas-consumption" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/enrico86/gas-consumption">View on GitHub</a>
+
+          <h1 id="project_title">Gas-consumption</h1>
+          <h2 id="project_tagline">Data Incubator project - natural gas consumption risk in the U.S.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/enrico86/gas-consumption/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/enrico86/gas-consumption/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
 <a id="the-problem-consumption-profile-risk" class="anchor" href="#the-problem-consumption-profile-risk" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The problem: consumption profile risk</h3>
 
-<p>For my <a href="https://www.thedataincubator.com/">Data Incubator</a> project I looked into the risks associated with selling natural gas, particularly to small, domestic consumers. This is vital for gas-selling companies (such as the one I work for), because as the energy commodity markets has become more and more liquid in recent years, margins related to gas reselling has been shrinking wildly. Small domestic consumers are the ones with larger margins, but also present the bigger risks in terms of consumption predictability.</p>
+<p>For my <a href="https://www.thedataincubator.com/">Data Incubator</a> project I looked into the risks associated with selling natural gas, particularly to small commercial and domestic consumers. This is vital for gas-selling companies (such as the one I work for), because as the energy commodity markets have become more and more liquid in recent years, margins related to gas reselling has been shrinking wildly. Small customers are the ones with larger margins, but also present the bigger risks in terms of consumption predictability.</p>
 
-<p>What I call <em>consumption price risk</em> is essentially the following: suppose you sell a gas provision for a given temporal interval (let's say the whole year 2016) at a given price X. You buy the gas in advance in the forward market at a lower price and you may think that you locked in a margin. But the gas provision you can buy on the market is temporally "flat": a given amount of energy for every day of the year. Will your customer consume the same amount of gas every day? Let's look at <a href="https://plot.ly/%7Eenrico.tesio/10/domestic-us-gas-consumption/">monthly consumption from U.S. residential use</a></p>
+<p>What I call <em>consumption price risk</em> is essentially the following: suppose you sell a gas provision for a given temporal interval (let's say the whole year 2016) at a given price X. You buy the gas in advance in the forward market at a lower price and you may think that you locked in a margin. But the gas provision you can buy on the market is temporally <em>flat</em>: a given amount of energy for every day of the year. Will your customer consume the same amount of gas every day? Let's look at <a href="https://plot.ly/%7Eenrico.tesio/10/domestic-us-gas-consumption/">monthly consumption from U.S. residential use</a></p>
 
-<p>As can be seen from the graph, gas consumption is VERY seasonal dependent (winter is colder, summer is hotter after all), and not constant every month - let alone constant every day!</p>
+<p>As can be seen from the graph, gas consumption is VERY seasonal dependent (think of all the gas-produced electricity you use in the summer), and not constant every month - let alone constant every day!</p>
 
 <h3>
 <a id="why-you-should-avoid-being-unbalanced" class="anchor" href="#why-you-should-avoid-being-unbalanced" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why you should avoid being unbalanced</h3>
 
-<p>And what happens when a customer consumes more than you thought (or less?) You end up having an <em>imbalance</em> in your portfolio, i.e. either too much gas, that you need to sell on the spot market, or too less, which you will need to buy. Whether this will result in a loss or gain for the reseller, it all depends on the difference between the market price for the unbalanced volumes and the selling price. In an ideal world, you would always want to buy low and sell high, but unfortunately this is not the case. As in turns out, in fact, if consumption is higher than you expected it is likely that if will be so not only for your portfolio, but in general for everybody (e.g., temperatures are lower than expected), so that high demand on the market --&gt; higher prices. The converse is also true, i.e. if you are too <em>long</em> in your portfolio chances are that everybody else is long and trying to sell, lowering the price down. This effect is visible already at a macro-scale: correlation between <strong>the whole U.S.</strong> residential consumption variations and the <a href="https://www.eia.gov/dnav/ng/hist/rngwhhdm.htm">Henry Hub return</a> is about 22% already on the <strong>month</strong> timescale (and increases as smaller temporal and spatial scales). For example, <a href="https://plot.ly/%7Eenrico.tesio/24/demand-and-price-for-dc-natural-gas/">take a look</a> at the correlation between price and the demand within the District Of Columbia (one of the 'riskiest' states in terms of consumption profile risk).
+<p>And what happens when a customer consumes more than you thought (or less?) You end up having an <em>imbalance</em> in your portfolio, i.e. either too much gas, that you need to sell on the spot market, or too less, which you will need to buy. Whether this will result in a loss or gain for the reseller, it all depends on the difference between the market price for the unbalanced volumes and the selling price. In an ideal world, you would always want to buy low and sell high, but unfortunately this is not the case. As it turns out, in fact, if consumption is higher than you expected it is likely that if will be so not only for your portfolio, but in general for everybody (e.g., temperatures are lower than expected), so that high demand on the market --&gt; higher prices. The converse is also true, i.e. if you are too <em>long</em> in your portfolio chances are that everybody else is long and trying to sell, lowering the price down. This effect is visible already at a macro-scale: correlation between <strong>the whole U.S.</strong> residential consumption variations and the <a href="https://www.eia.gov/dnav/ng/hist/rngwhhdm.htm">Henry Hub return</a> is about 22% already on the <strong>month</strong> timescale, and increases as smaller temporal and spatial scales. For example, <a href="https://plot.ly/%7Eenrico.tesio/24/demand-and-price-for-dc-natural-gas/">take a look</a> at the correlation between price and the demand within the District Of Columbia (one of the 'riskiest' states in terms of consumption profile risk).
 In other words, <em>errors tend to sum up much more than cancel out</em>. So, extra care is needed.</p>
 
 <h3>
@@ -49,29 +52,22 @@ In other words, <em>errors tend to sum up much more than cancel out</em>. So, ex
 <p>How can we use this analysis to solve the problem? Here I divided the problem in two parts:</p>
 
 <ul>
-<li><p>seasonal components: gas consumption is higher in the winter than in the summer. But you can build up a portfolio of physical forwards that reproduces this as accurately as possible by buying monthly contracts, leveraging the <a href="https://plot.ly/%7Eenrico.tesio/16/henry-hub-forward-curve/">forward curve structure</a> of the gas market. This covers the main seasonal variations in consumption, but leaves unhedged the short-scale variations.</p></li>
+<li><p>seasonal components: gas consumption regularly varies between summer and winter. Once you know it, you can build up a portfolio of physical forwards that reproduces this as accurately as possible by buying monthly contracts, leveraging the <a href="https://plot.ly/%7Eenrico.tesio/16/henry-hub-forward-curve/">forward curve structure</a> of the gas market. This covers the main seasonal variations in consumption, but leaves unhedged the short-scale variations.</p></li>
 <li><p>short-timescale unbalances: to handle these, you could rely on specific optional contracts, called <a href="http://www.investopedia.com/terms/s/swing-option.asp"><em>swing options</em></a>, which give you the right to buy gas at a given fixed price (called <em>strike price</em>). Typically, you can decide shortly in advance the amount of gas to buy (thus 'swinging' the volume between  a minimum and a maximum set by the contract). As you will be willing to buy if the market price goes above the strike, generally speaking the payoff of such an option is a cumulative combination of vanilla option payoffs' of the form <code>max(market_price - strike, 0)</code>.
 The idea of this approach is that when your portfolio gets short because consumption goes up, it is likely that the price is also going up (as discussed above). So you leverage on your swing option portfolio to obtain the gas you need (at a fixed, predetermined price) to achieve a short-term balance of your portfolio. This way, you balance your portfolio with no or little exposure to consumption variations.</p></li>
 </ul>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/enrico86/gas-consumption/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/enrico86/gas-consumption/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/enrico86/gas-consumption"></a> is maintained by <a href="https://github.com/enrico86">enrico86</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+      </section>
     </div>
 
-  
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Gas-consumption maintained by <a href="https://github.com/enrico86">enrico86</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
   </body>
 </html>
