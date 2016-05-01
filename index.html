@@ -39,20 +39,11 @@ In other words, <em>errors tend to sum up much more than cancel out</em>. So, ex
 
 <p>How can we use this analysis to solve the problem? Here i divide the problem in two parts:</p>
 
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+<ul>
+<li><p>seasonal components: gas consumption is higher in the winter than in the summer. But you can build up a portfolio of physical forwards that reproduces this as accurately as possible by buying monthly contracts, leveraging the <a href="https://plot.ly/%7Eenrico.tesio/16/henry-hub-forward-curve/">forward curve structure</a> of the gas market. This covers the main seasonal variations in consumption, and leaves unhedged the short-scale variations.</p></li>
+<li><p>short-timescale unbalances: to handle these, you could rely on specific optional contracts, called <a href="http://www.investopedia.com/terms/s/swing-option.asp"><em>swing options</em></a>, which give you the right to buy gas at a given fixed price (called <em>strike price</em>). Typically, you can decide one day in advance the amount of gas to buy (thus 'swinging' the volume between  minimum and a maximum). As you will be willing to buy if the market price goes above the strike, generally speaking the payoff of such an option is a cumulative combination of vanilla option payoffs' in the form <code>max(market_price - strike, 0)</code>.
+The idea of this approach is that when your portfolio gets short because consumption goes up, it is likely that the price is also going up (as discussed above). So you leverage on your swing option portfolio to obtain the gas you need (at a fixed, predetermined price) to achieve a short-term balance of your portfolio. This way, you balance your portfolio with no or little exposure to price movements risk.</p></li>
+</ul>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/enrico86/gas-consumption">Gas-consumption</a> is maintained by <a href="https://github.com/enrico86">enrico86</a>.</span>
